@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>Guess My Number!</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<section id = "header">
+	<h1>Guess My Number!</h1>
+</section>
+<section id = "body" class="container-narrow col-xs-8 col-centered">
+	<h2>Step right up, it's time to play Guess My Number!</h2>
+	<h3>
+		<p>The rules are simple: You have 5 chances to correctly guess my number from 1-100.</p>
+		<p>Don't worry, I will give you hints along the way!</p>
+		<p>Guess correctly and win a prize!</p>
+		<img src="./img/sunglasses.png" alt="Sunglasses">
+	</h3>
+<section class="container-narrow col-xs-3 col-centered">
+<form>
+<div class="row"
+  <div class="form-group col-xs-3 col-centered">
+    <label for="numberInput">What's your number?</label>
+    <input type="numberInput" class="form-control col-xs-3 col-centered" id="numberInput" placeholder="Pick a number: 1-100">
+  </div>
+ </div>
+ <div class="form-group">
+ <button type="submit" class="btn btn-default">Submit</button>
+ </div>
+</form>
+</section>
+<section class="container-narrow" id ="hintbutton">
+<button type="hint" class="btn btn-info col-xs-3 pull-left">Hint, please!</button>
+<button type="hint" class="btn btn-info col-xs-3 pull-right">Play again!</button>
+</section>
+
+</body>
+</html>

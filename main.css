@@ -1,0 +1,60 @@
+body { 
+ background: url(./img/new_year_background.png) repeat 0 0;
+}
+
+title, h1 {
+ font-family: 'Lobster', Georgia, Times, serif;
+ font-size: 120px;
+ color: #66ccb3;
+ line-height: 100px;
+ text-align: center;
+ padding: 25px;
+ text-shadow: 1px 1px 1px #ccc;
+}
+ 
+h2, h3, h4, h5, h6, p, form {
+ font-family: 'Cabin', Helvetica, Arial, sans-serif;
+ font-size: 15px;
+ line-height: 25px;
+ text-align: center;
+ padding: -20px;
+}
+
+h2 {
+ font-size: 25px;
+ text-shadow: 1px 1px 1px #ccc;
+ font-style: bold;
+}
+
+.row{
+font-size: 18px;
+}
+
+.btn{
+ font-family: 'Cabin', Helvetica, Arial, sans-serif;
+ font-size: 15px;
+ text-shadow: 1px 1px 1px #ccc;
+}
+
+.btn-default{
+ margin: 10px;
+ padding: 5px;
+ font-size: 18px;
+ background-color: #66ccb3;
+ color: #ffffff;
+ border: 1px black;
+ font-style: bold;
+}
+
+.col-centered{
+ float: none;
+ margin: 0 auto;
+}
+
+.pull-left{
+ margin-left: 100px;
+}
+
+.pull-right{
+ margin-right: 100px;
+}
