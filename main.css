@@ -2,7 +2,7 @@ body {
  background: url(./img/new_year_background.png) repeat 0 0;
 }
 
-title, h1 {
+h1 {
  font-family: 'Lobster', Georgia, Times, serif;
  font-size: 120px;
  color: #66ccb3;
@@ -12,7 +12,7 @@ title, h1 {
  text-shadow: 1px 1px 1px #ccc;
 }
  
-h2, h3, h4, h5, h6, p, form {
+h2, h3, p, form {
  font-family: 'Cabin', Helvetica, Arial, sans-serif;
  font-size: 15px;
  line-height: 25px;

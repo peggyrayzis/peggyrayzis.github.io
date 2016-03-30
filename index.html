@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+	<script src="jquery-2.2.2.min.js"</script>
+	<script type="text/javascript" src="guessingGame.js"></script>
 	<title>Guess My Number!</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -19,23 +21,22 @@
 		<p>Guess correctly and win a prize!</p>
 		<img src="./img/sunglasses.png" alt="Sunglasses">
 	</h3>
-<section class="container-narrow col-xs-3 col-centered">
-<form>
-<div class="row"
-  <div class="form-group col-xs-3 col-centered">
-    <label for="numberInput">What's your number?</label>
-    <input type="numberInput" class="form-control col-xs-3 col-centered" id="numberInput" placeholder="Pick a number: 1-100">
-  </div>
- </div>
- <div class="form-group">
- <button type="submit" class="btn btn-default">Submit</button>
- </div>
-</form>
-</section>
-<section class="container-narrow" id ="hintbutton">
-<button type="hint" class="btn btn-info col-xs-3 pull-left">Hint, please!</button>
-<button type="hint" class="btn btn-info col-xs-3 pull-right">Play again!</button>
-</section>
-
+	<section class="col-xs-3 col-centered">
+	<form>
+		<div class="row"
+ 				<div class="form-group col-xs-3 col-centered">
+    			<label for="numberInput">What's your number?</label>
+    			<input type="numberInput" class="form-control col-xs-3 col-centered input" id="numberInput" placeholder="Pick a number: 1-100">
+  				</div>
+ 		</div>
+ 		<div class="form-group">
+ 				<button type="submit" class="btn btn-default">Submit</button>
+ 		</div>
+	</form>
+	</section>
+	<section id ="hintbutton">
+		<button type="hint" class="btn btn-info col-xs-3 pull-left">Hint, please!</button>
+		<button type="replay" class="btn btn-info col-xs-3 pull-right">Play again!</button>
+	</section>
 </body>
 </html>
