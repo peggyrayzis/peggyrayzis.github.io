@@ -1,8 +1,6 @@
 <!doctype html>
 <html>
 <head>
-	<script src="jquery-2.2.2.min.js"</script>
-	<script src="guessingGame.js"></script>
 	<title>Guess My Number!</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -35,14 +33,14 @@
 	</form>
 	</section>
 	<section class="container-narrow col-xs-8 col-centered">
-		<h4>
-			<p>You have 5 guesses left!</p>
-			<p></p>
-		</h4>
+		<h4 class="guessesleft">You have 5 guesses left!</h4>
+		<h5 class="lowernumber"></h5>
 	</div>
 	<section id ="hintbutton">
 		<button type="hint" id="hint" class="btn btn-info col-xs-3 pull-left">Hint, please!</button>
 		<button type="replay" id="replay" class="btn btn-info col-xs-3 pull-right">Play again!</button>
 	</section>
+	<script src="jquery-2.2.2.min.js"></script>
+	<script src="guessingGame.js"></script>
 </body>
 </html>

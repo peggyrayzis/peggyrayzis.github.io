@@ -24,7 +24,7 @@ function playersGuessSubmission(){
 	$('#numberInput').append('playersGuess');
 	$('playersGuess').remove();
 	guesses --
-	$('h4:first-child').text("You have " + guesses + " left!");
+	$('.guessesleft').text("You have " + guesses + " guesses left!");
 	checkGuess();
 }
 
@@ -32,7 +32,7 @@ function playersGuessSubmission(){
 
 function checkGuess(){
 	if(winningNumber === playersGuess){
-		$('h4:first-child').text("You won! Play again?");
+		$('.guessesleft').text("You won! Play again?");
 		playAgain();
 	} else {
 		lowerOrHigher();
