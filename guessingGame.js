@@ -4,9 +4,7 @@ jQuery(document).ready(function(){
 /* **** Global Variables **** */
 // try to elminate these global variables in your project, these are here just to start.
 
-var playersGuess = playersGuessSubmission();
 var winningNumber = generateWinningNumber();
-
 
 
 /* **** Guessing Game Functions **** */
@@ -22,55 +20,60 @@ function generateWinningNumber(){
 
 function playersGuessSubmission(){
 	var playersGuess = +$(this).val();
+	var guesses = 5;
 	$('#numberInput').append('playersGuess');
 	$('playersGuess').remove();
-	return playersGuess;
-	// add code here
-}
-
-// Determine if the next guess should be a lower or higher number
-
-function lowerOrHigher(){
-	var guessArray = [];
-	var guesses = 0
-	if(winningNumber > playersGuess){
-		guessArray.push(playersGuess);
-		guesses ++;
-		return "Guess higher! Try again!"
-	} else {
-		guessArray.push(playersGuess);
-		guesses ++;
-		return "Guess lower! Try again!"
-	}
-	// add code here
+	guesses --
+	$('h4:first-child').text("You have " + guesses + " left!");
+	checkGuess();
 }
 
 // Check if the Player's Guess is the winning number 
 
 function checkGuess(){
 	if(winningNumber === playersGuess){
-		return "You Won!"
+		$('h4:first-child').text("You won! Play again?");
+		playAgain();
 	} else {
 		lowerOrHigher();
 	}
-	// add code here
 }
+
+// Determine if the next guess should be a lower or higher number
+
+function lowerOrHigher(){
+	var guessArray = [];
+	if(winningNumber > playersGuess){
+		guessArray.push(playersGuess);
+		$('h4:odd').text("Try a higher number!");
+	} else {
+		guessArray.push(playersGuess);
+		$('h4:odd').text("Try a lower number!");
+	}
+}
+
 
 // Create a provide hint button that provides additional clues to the "Player"
 
 function provideHint(){
-	// add code here
+
 }
 
 // Allow the "Player" to Play Again
 
 function playAgain(){
-	// add code here
+	winningNumber = generateWinningNumber();
+	var guesses = 5;
+	$('h4:first-child').text("You have " + guesses + " left!");
+	$('h4:odd').text("");
+
 }
 
 
 /* **** Event Listeners/Handlers ****  */
-$('.input').on('keyup', '#numberInput', playersGuessSubmission)
+$('#guessbutton').on('click', playersGuessSubmission);
+$('#hint').on('click', provideHint);
+$('#replay').on('click', playAgain);
 
 
 

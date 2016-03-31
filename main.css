@@ -26,8 +26,17 @@ h2 {
  font-style: bold;
 }
 
+h4 > p {
+ font-size: 18px;
+ text-shadow: 1px 1px 1px #ccc;
+ font-style: bold;
+ margin-top: 10px;
+ margin-bottom: 15px;
+}
+
 .row{
 font-size: 18px;
+text-shadow: 1px 1px 1px #ccc;
 }
 
 .btn{
