@@ -11,6 +11,10 @@
 <section id = "header">
 	<h1>Guess My Number!</h1>
 </section>
+<div class = "winner">
+<button type="winreplay" id="winreplay" class="btn btn-info center-block">Play again!</button>
+<img id="puppies" class="img-responsive center-block" src="./img/puppies.png" alt="Puppies">
+</div>
 <section id = "body" class="container-narrow col-xs-8 col-centered">
 	<h2>Step right up, it's time to play Guess My Number!</h2>
 	<h3>
@@ -18,6 +22,7 @@
 		<p>Don't worry, I will give you hints along the way!</p>
 		<p>Guess correctly and win a prize!</p>
 		<img id="emoji" src="./img/sunglasses.png" alt="Sunglasses">
+		<img id="loser" src="./img/loser.png" alt="Poop">
 	</h3>
 	<section class="col-xs-3 col-centered">
 	<div class="row"
@@ -26,16 +31,16 @@
     		<input type="numberInput" class="form-control col-xs-3 col-centered input" id="numberInput" placeholder="Pick a number: 1-100">
   		</div>
  	</div>
- 		<div>
- 			<button type="submit" id="guessbutton" class="btn btn-default">Submit</button>
- 		</div>
+ 	<div class="submit">
+ 		<button type="submit" id="guessbutton" class="btn btn-default">Submit</button>
+ 	</div>
 	</section>
 	<section class="container-narrow col-xs-8 col-centered">
 		<h4 class="guessesleft">You have 5 guesses left!</h4>
 		<h4 class="highlow"></h4>
 		<h4 class="message"></h4>
-	</div>
-	<section id ="hintbutton">
+	</section>
+	<section class="container-narrow col-xs-8 col-centered" id ="hintbutton">
 		<button type="hint" id="hint" class="btn btn-info col-xs-3 pull-left">Hint, please!</button>
 		<button type="replay" id="replay" class="btn btn-info col-xs-3 pull-right">Play again!</button>
 	</section>

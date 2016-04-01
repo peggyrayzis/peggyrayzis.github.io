@@ -1,4 +1,4 @@
-
+(function(){
 // DON'T FORGET YOUR IIFE!
 
 /* **** Global Variables **** */
@@ -6,7 +6,6 @@
 
 var winningNumber = generateWinningNumber();
 var hints = 0;
-var playersGuess;
 var winner = false;
 var guesses = 5;
 
@@ -22,15 +21,16 @@ function generateWinningNumber(){
 // Fetch the Players Guess
 
 function playersGuessSubmission(){
+	
 	var playersGuess = +$('#numberInput').val();
 	$('#numberInput').append('playersGuess');
 	$('#numberInput').val("");
 	$('playersGuess').remove();
-	checkGuess();
+	checkGuess(playersGuess);
 }
 // Check if the Player's Guess is the winning number 
 
-function checkGuess(){
+function checkGuess(playersGuess){
 	if(guesses > 0){
 		guesses--
 		if(playersGuess === winningNumber){
@@ -41,7 +41,7 @@ function checkGuess(){
 			winnerOrLoser();
 		} else if((playersGuess !== winningNumber) && (guesses === 1)){
 			$('.guessesleft').text("You have " + guesses + " guess left!");
-			lowerOrHigher();
+			lowerOrHigher(playersGuess);
 		} else if((playersGuess !== winningNumber) && (guesses === 0)){
 			$('.guessesleft').text("Thought you could outsmart me? You lose!");
 			$('.highlow').text("Why don't you play again?");
@@ -49,14 +49,14 @@ function checkGuess(){
 			winnerOrLoser();
 		} else {
 			$('.guessesleft').text("You have " + guesses + " guesses left!");
-			lowerOrHigher();
+			lowerOrHigher(playersGuess);
 		}
 	}
 }
 
 // Determine if the next guess should be a lower or higher number
 
-function lowerOrHigher(){
+function lowerOrHigher(playersGuess){
 	var absVal = Math.abs(winningNumber - playersGuess);
 	if(absVal > 25){
 		if(playersGuess > winningNumber){
@@ -90,43 +90,40 @@ function shuffleArray(array) {
 }
 // Create a provide hint button that provides additional clues to the "Player"
 
+function randomNum(array){
+	array.push(Math.floor(Math.random()*100)+1);
+}
+
+
 function provideHint(){
-	if(hints === 0){
+	if((hints === 0) && (guesses !== 5)){
 		var hintArr = [];
 		hintArr.push(winningNumber)
-		hintArr.push(Math.floor(Math.random()*100)+1);
-		hintArr.push(Math.floor(Math.random()*100)+1);
-		hintArr.push(Math.floor(Math.random()*100)+1);
-		hintArr.push(Math.floor(Math.random()*100)+1);
+		randomNum(hintArr);
+		randomNum(hintArr);
+		randomNum(hintArr);
+		randomNum(hintArr);
+		randomNum(hintArr);
 		var shuffled = shuffleArray(hintArr);
 		$('.message').text("The winning number is one of these: " + hintArr + ". Choose wisely!");
 		hints++
+	} else if((hints === 0) && (guesses === 5)){
+		$('.highlow').text("Don't be lazy! Guess before you use a hint.");
 	} else {
 		$('.message').text("Sorry, you already used your hint.");
 	}
 }
 
-// function winnerOrLoser(){
-// 	if(winner === true){
-// 		change sunglasses emoji to something fun
-// 		guess my number headline changes to congratulations
-// 	} else {
-// 		change sunglasses emoji to something sad
-// 		guess my number headline changes to you lose
-// 	}
-// }
-
-
-// Allow the "Player" to Play Again
-
-function playAgain(){
-	var winningNumber = generateWinningNumber();
-	var hints = 0;
-	var winner = false;
-	var guesses = 5;
-	$('.guessesleft').text("You have " + guesses + " guesses left!");
-	$('.message').text("");
-	$('.highlow').text("");
+function winnerOrLoser(){
+	if(winner === true){
+		$('h1').text("You win a puppy!!!");
+		$('#body').toggle();
+		$('.winner').toggle();
+	} else {
+		$('h1').text("You stink! Try again.");
+		$('#emoji').toggle();
+		$('#loser').toggle();
+	}
 }
 
 
@@ -134,12 +131,20 @@ function playAgain(){
 $(document).ready(function(){
 $('#guessbutton').on('click', playersGuessSubmission);
 $('#hint').on('click', provideHint);
-$('#replay').on('click', playAgain);
-
-// put one in here so they can use return
+$('#numberInput').keydown(function(e){
+    if (e.keyCode === 13) {
+        playersGuessSubmission();
+    }
+});
+$('#replay').click(function() {
+    location.reload();
+});
+$('#winreplay').click(function() {
+    location.reload();
+});
 
 });
 
-
+})();
 
 

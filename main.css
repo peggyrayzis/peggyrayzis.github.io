@@ -1,4 +1,5 @@
 body { 
+ /*display:none;*/
  background: url(./img/new_year_background.png) repeat 0 0;
 }
 
@@ -34,6 +35,34 @@ h4, h5 {
  margin-bottom: 15px;
 }
 
+.defaultpage {
+/* display: none;*/
+}
+
+.winner {
+ display: none;
+}
+
+#puppies {
+ height: auto; 
+ width: auto; 
+ max-width: 600px; 
+ max-height: 600px;
+ /*margin: 0 auto;*/
+}
+
+#winreplay {
+ text-align: center;
+ margin-top:15px;
+ margin-bottom:20px;
+ padding: 10px;
+ font-size: 22px;
+}
+
+#loser {
+ display: none;
+}
+
 .row{
 font-size: 18px;
 text-shadow: 1px 1px 1px #ccc;
@@ -51,13 +80,15 @@ text-shadow: 1px 1px 1px #ccc;
 }
 
 .btn-default{
- margin: 0 auto;
- padding: 5px;
+ margin-left: 46px;
+ margin-top: 15px;
+ padding: 8px;
  font-size: 18px;
  background-color: #66ccb3;
  color: #ffffff;
  border: 1px black;
  font-style: bold;
+/* text-align: center;*/
 }
 
 .col-centered{
